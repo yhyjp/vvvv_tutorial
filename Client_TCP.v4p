@@ -1,0 +1,145 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\Client_TCP.v4p" systemname="Client_TCP" filename="D:\work\vvvv\Client_TCP.v4p">
+   <BOUNDS type="Window" left="12420" top="0" width="11025" height="15750">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="12" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="720" top="405" width="2385" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="720" top="405" width="6720" height="555">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="ネットワーク通信（TCP）～クライアント側～">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="15">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="メイリオ">
+   </PIN>
+   </NODE>
+   <NODE systemname="TCP (Network Client)" nodename="TCP (Network Client)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="2550" top="2910" width="2565" height="270">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="14" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5475" top="3510" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5475" top="3510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Connected" dstnodeid="14" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="AsColor (Raw)" filename="%VVVV%\lib\nodes\modules\Raw\AsColor (Raw).v4p" nodename="AsColor (Raw)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="2445" top="3660" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="16" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="17" systemname="IOBox (Color)">
+   <BOUNDS type="Box" left="2445" top="5235" width="3510" height="1995">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2445" top="5235" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="18">
+   <BOUNDS type="Node" left="2400" top="1560" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2400" top="1560" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="こんにちは">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsRaw (String)" nodename="AsRaw (String)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="2430" top="2130" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output String" dstnodeid="19" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="13" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3870" top="1860" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3870" top="1860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Press">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Do Send">
+   </LINK>
+   <NODE systemname="S+H (Color)" nodename="S+H (Color)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="2565" top="4500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="21" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="17" dstpinname="Color Input">
+   </LINK>
+   <NODE systemname="= (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="= (Raw)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="3795" top="3705" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="22" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="3810" top="4065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="23" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="21" dstpinname="Set">
+   </LINK>
+   </PATCH>

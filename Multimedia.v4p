@@ -1,0 +1,155 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\Multimedia.v4p" systemname="Multimedia" filename="D:\work\vvvv\Multimedia.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="23505" height="15750">
+   </BOUNDS>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1860" top="4650" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="1860" top="5475" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1860" top="5475" width="4290" height="3420">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7545" top="8175" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="FileTexture (EX9.Texture)" nodename="FileTexture (EX9.Texture)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1815" top="3870" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="D:\work\vvvv\asset\ant.jpg">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Preload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Texture Out" dstnodeid="3" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="FileStream2 (DShow9)" nodename="FileStream2 (DShow9)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="7890" top="2595" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="D:\work\vvvv\asset\introduction_vvvv.avi">
+   </PIN>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Play" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Do Seek" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Speed" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="VideoTexture (EX9.Texture VMR9)" nodename="VideoTexture (EX9.Texture VMR9)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="7890" top="3630" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Video" dstnodeid="12" dstpinname="Video">
+   </LINK>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="7905" top="4890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="13">
+   <BOUNDS type="Node" left="7905" top="5715" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7905" top="5715" width="5625" height="2775">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7545" top="8175" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Layer" dstnodeid="13" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Texture Out" dstnodeid="14" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="15165" top="3735" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Driver" slicecount="1" values="|スピーカー (Realtek High Definition |">
+   </PIN>
+   <PIN pinname="Volume" slicecount="1" values="-44">
+   </PIN>
+   </NODE>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="15150" top="2700" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1" slicecount="1" values="asset\Lucky_Day.mp3">
+   </PIN>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Play" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Do Seek" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Audio" dstnodeid="16" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="Reader (String)" filename="%VVVV%\lib\nodes\modules\String\Reader (String).v4p" nodename="Reader (String)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="15765" top="6165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="D:\work\vvvv\asset\test.txt">
+   </PIN>
+   <PIN pinname="Read" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Content" visible="1">
+   </PIN>
+   <PIN pinname="Encoding" slicecount="1" values="|System Default|">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="20">
+   <BOUNDS type="Node" left="15765" top="6855" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15765" top="6855" width="2985" height="2265">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="16">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Content" dstnodeid="20" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="21" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1110" top="420" width="1830" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1110" top="420" width="9525" height="1110">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="マルチメディアファイルの読み込み">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="28">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|小塚ゴシック Pro L|">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

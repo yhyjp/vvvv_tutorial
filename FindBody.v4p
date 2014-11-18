@@ -1,0 +1,131 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\Shooting-2.v4p">
+   <NODE id="0" systemname="Find (String)" nodename="Find (String)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="2100" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Count" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Position" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Substring" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Occurence Mode" pintype="Input" visible="1" slicecount="1" values="First">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="1" systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="1500" top="2880" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Index" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Bin Size" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Output Bins" pintype="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="2" systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="1965" top="2430" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Former Slice" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Select" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <BOUNDS type="Box" left="-10035" top="-3135" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="Output" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="3" systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="2535" top="1965" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Epsilon" slicecount="1" pintype="Input" visible="1" values="0.01">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" pintype="Input" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Inverse Output" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="4" systemname="IOBox (Node)" componentmode="InABox">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Input Node|">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="1" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Former Slice" dstnodeid="1" dstpinname="Index">
+   </LINK>
+   <NODE id="5" systemname="IOBox (Node)" componentmode="InABox">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Output Node|">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="3480" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="3480" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="5" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Position" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="Select">
+   </LINK>
+   <NODE id="6" systemname="IOBox (String)" componentmode="InABox">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   <BOUNDS type="Box" left="2400" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2400" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output String" dstnodeid="0" dstpinname="Input">
+   </LINK>
+   <NODE id="7" systemname="IOBox (String)" componentmode="InABox">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Substring">
+   </PIN>
+   <BOUNDS type="Box" left="3300" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3300" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output String" dstnodeid="0" dstpinname="Substring">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Count" dstnodeid="3" dstpinname="Input 1">
+   </LINK>
+   <BOUNDS type="Window" left="12360" top="5763" width="4135" height="4480">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

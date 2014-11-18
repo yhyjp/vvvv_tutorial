@@ -1,0 +1,143 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\Arduino_first.v4p" systemname="Arduino_first" filename="D:\work\vvvv\Arduino_first.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="23460" height="15750">
+   </BOUNDS>
+   <NODE systemname="VideoIn (EX9.Texture)" filename="%VVVV%\lib\nodes\modules\EX9.Texture\VideoIn (EX9.Texture).v4p" nodename="VideoIn (EX9.Texture)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="15030" top="1155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="14985" top="1665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="13200" top="2265" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13200" top="2265" width="9810" height="7380">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16635" top="6930" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="1" dstpinname="Texture">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="660" top="240" width="1755" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="660" top="240" width="8550" height="1125">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Arduino を使う～導入編～|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="メイリオ">
+   </PIN>
+   </NODE>
+   <NODE systemname="RS232 (Devices)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="RS232 (Devices)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="4695" top="6705" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Do Send" visible="1">
+   </PIN>
+   <PIN pinname="Baudrate" slicecount="1" values="9600">
+   </PIN>
+   <PIN pinname="Port Name" slicecount="1" values="COM3">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Connected" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="5">
+   <BOUNDS type="Node" left="4590" top="2115" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4590" top="2115" width="1740" height="1560">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsRaw (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="AsRaw (Value)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="4590" top="4545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="Byte">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="4" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Change (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Change (Raw)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="4830" top="5340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="OnChange" dstnodeid="4" dstpinname="Do Send">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="8">
+   <BOUNDS type="Node" left="7020" top="6735" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7020" top="6735" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="9">
+   <BOUNDS type="Node" left="6990" top="8265" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6990" top="8265" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Connected" dstnodeid="9" dstpinname="Y Input Value">
+   </LINK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

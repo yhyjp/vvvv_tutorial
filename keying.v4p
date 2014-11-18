@@ -1,0 +1,163 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\keying.v4p" systemname="keying" filename="D:\work\keying.v4p">
+   <BOUNDS type="Window" left="7770" top="0" width="14625" height="15750">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InABox" id="1">
+   <BOUNDS type="Node" left="3450" top="2445" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3450" top="2445" width="4005" height="2820">
+   </BOUNDS>
+   <BOUNDS type="Window" left="15555" top="6600" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Sphere (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Sphere (DX11.Geometry)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="2730" top="1170" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="Radius" slicecount="1" values="2.24">
+   </PIN>
+   </NODE>
+   <NODE systemname="GouraudDirectional (DX11.Effect)" filename="%VVVV%\packs\dx11\nodes\dx11\GouraudDirectional.fx" nodename="GouraudDirectional (DX11.Effect)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="2715" top="1710" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Diffuse Color" slicecount="1" values="|0.95936,0.95936,0.95936,1.00000|">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.50959,0.50959,0.50959,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="3" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="6555" top="1815" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="View" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Projection" dstnodeid="1" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="5595" top="7500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="FullscreenQuad (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\modules\FullscreenQuad (DX11.Layer).v4p" nodename="FullscreenQuad (DX11.Layer)" componentmode="Hidden" id="34">
+   <BOUNDS type="Node" left="2775" top="6720" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InABox" id="35">
+   <BOUNDS type="Node" left="2880" top="8370" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2880" top="8370" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16065" top="10440" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="33" srcpinname="Layer Out" dstnodeid="35" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="FullscreenQuad (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\modules\FullscreenQuad (DX11.Layer).v4p" nodename="FullscreenQuad (DX11.Layer)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="6585" top="6885" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Perlin (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Source\Perlin.tfx" nodename="Perlin (DX11.TextureFX)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="1740" top="5850" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Texture Out" dstnodeid="34" dstpinname="Texture">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="39" systemname="IOBox (Color)">
+   <BOUNDS type="Box" left="3450" top="6120" width="1155" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3450" top="6120" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|1.00000,0.54220,0.54220,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="39" srcpinname="Color Output" dstnodeid="34" dstpinname="Color">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="33" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="34" srcpinname="Layer" dstnodeid="33" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="Keying (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Filter\Keying.tfx" nodename="Keying (DX11.TextureFX)" componentmode="Hidden" id="46">
+   <BOUNDS type="Node" left="7440" top="5925" width="1830" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Luma">
+   </PIN>
+   <PIN pinname="Invert" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Texture Out" dstnodeid="46" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="5850" top="6375" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="50" srcpinname="Render State" dstnodeid="36" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Texture Out" dstnodeid="36" dstpinname="Texture">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="53" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="6120" top="5820" width="780" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6120" top="5820" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="Blend">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="53" srcpinname="Output Enum" dstnodeid="50" dstpinname="Mode">
+   </LINK>
+   </PATCH>

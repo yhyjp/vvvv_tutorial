@@ -1,0 +1,67 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\VST.v4p" systemname="VST" filename="D:\work\vvvv\VST.v4p">
+   <BOUNDS type="Window" left="8460" top="3345" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="SpicyGuitar (VST DShow9)" filename="%VVVV%\lib\nodes\vst\SpicyGuitar.dll" nodename="SpicyGuitar (VST DShow9)" componentmode="InAWindow" id="0">
+   <BOUNDS type="Node" left="3540" top="3060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Midi Notes Velocity" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Midi Notes" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Midi Notes Send" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Audio Input" visible="1">
+   </PIN>
+   <PIN pinname="Audio Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MidiNote (Devices)" nodename="MidiNote (Devices)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="4200" top="1830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="On Data" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Channel" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Note" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="On Data" dstnodeid="0" dstpinname="Midi Notes Send">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="0" dstpinname="Midi Notes Velocity">
+   </LINK>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="3240" top="750" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=".. To [" slicecount="1" values="127">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="1" dstpinname="Note">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="0" dstpinname="Midi Notes">
+   </LINK>
+   <NODE systemname="WavePlayer (DShow9)" nodename="WavePlayer (DShow9)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1275" top="1005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Audio" dstnodeid="0" dstpinname="Audio Input">
+   </LINK>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="2445" top="4065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Volume" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Audio Output" dstnodeid="4" dstpinname="Audio">
+   </LINK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

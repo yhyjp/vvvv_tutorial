@@ -1,0 +1,243 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\texture_source.v4p" systemname="texture_source" filename="D:\work\vvvv\texture_source.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="23715" height="15750">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="9465" top="4665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="12090" top="4755" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12090" top="4755" width="10155" height="9450">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7425" top="6765" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Clear" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="5" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="360" top="255" width="2865" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="360" top="255" width="10155" height="735">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|vvvv実況　ノード探検 ～Texture Source 編～|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="20">
+   </PIN>
+   </NODE>
+   <NODE systemname="Lava (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Lava\Lava (EX9.Texture Source).v4p" nodename="Lava (EX9.Texture Source)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1800" top="1710" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="phi" slicecount="1" values="3.8">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="0.03">
+   </PIN>
+   </NODE>
+   <NODE systemname="Text (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Text\Text (EX9.Texture Source).v4p" nodename="Text (EX9.Texture Source)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3690" top="1725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.06">
+   </PIN>
+   <PIN pinname="Scale XY" slicecount="2" values="0.91,0.91">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.28360,0.00000,0.04966,0.00000|">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|Courier New Baltic|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Blobs (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Blobs\Blobs (EX9.Texture Source).v4p" nodename="Blobs (EX9.Texture Source)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="6300" top="1740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0.11">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="0.47">
+   </PIN>
+   <PIN pinname="Field" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Brush (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Brush\Brush (EX9.Texture Source).v4p" nodename="Brush (EX9.Texture Source)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="8370" top="1740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="BrushSize" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="BrushColor" slicecount="1" values="|0.72567,0.72567,0.72567,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Noise (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Noise\Noise (EX9.Texture Source).v4p" nodename="Noise (EX9.Texture Source)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="10650" top="1740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Grey" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Perlin (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Perlin\Perlin (EX9.Texture Source).v4p" nodename="Perlin (EX9.Texture Source)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="12795" top="1740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="0.06">
+   </PIN>
+   </NODE>
+   <NODE systemname="Pillow (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Pillow\Pillow (EX9.Texture Source).v4p" nodename="Pillow (EX9.Texture Source)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="14985" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Gamma" slicecount="2" values="-3.76,-3.76">
+   </PIN>
+   <PIN pinname="Translate" slicecount="2" values="0.02,0.02">
+   </PIN>
+   <PIN pinname="Color A" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Pixels (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Pixels\Pixels (EX9.Texture Source).v4p" nodename="Pixels (EX9.Texture Source)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="17550" top="1710" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Amount" slicecount="1" values="0.71">
+   </PIN>
+   </NODE>
+   <NODE systemname="Plasma (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Plasma\Plasma (EX9.Texture Source).v4p" nodename="Plasma (EX9.Texture Source)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="1605" top="2730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Scale" slicecount="2" values="0.99,0.99">
+   </PIN>
+   <PIN pinname="Saturation" slicecount="1" values="0.41">
+   </PIN>
+   <PIN pinname="Offset" slicecount="2" values="0.13,0.13">
+   </PIN>
+   </NODE>
+   <NODE systemname="Liquish (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Liquish\Liquish (EX9.Texture Source).v4p" nodename="Liquish (EX9.Texture Source)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="3750" top="2670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="time" slicecount="1" values="-0.83">
+   </PIN>
+   <PIN pinname="ColorC" slicecount="1" values="|0.13426,0.00000,0.39759,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Palette (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Palette\Palette (EX9.Texture Source).v4p" nodename="Palette (EX9.Texture Source)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="6075" top="2640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="| XY_HSV|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Voronoi (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Voronoi\Voronoi (EX9.Texture Source).v4p" nodename="Voronoi (EX9.Texture Source)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="8025" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Amount" slicecount="1" values="184">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="1.02">
+   </PIN>
+   <PIN pinname="Color A" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Seed" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Gradient (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Gradient\Gradient (EX9.Texture Source).v4p" nodename="Gradient (EX9.Texture Source)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="10335" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Clamp Color" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="| Linear|">
+   </PIN>
+   </NODE>
+   <NODE systemname="TexCoords (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\TexCoords\TexCoords (EX9.Texture Source).v4p" nodename="TexCoords (EX9.Texture Source)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="12690" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Mandelbrot (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Mandelbrot\Mandelbrot (EX9.Texture Source).v4p" nodename="Mandelbrot (EX9.Texture Source)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="14640" top="2730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Mandelbrot/Julia" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="X Pos" slicecount="1" values="-0.2">
+   </PIN>
+   <PIN pinname="Y Pos" slicecount="1" values="0.31">
+   </PIN>
+   <PIN pinname="C X" slicecount="1" values="-0.58">
+   </PIN>
+   <PIN pinname="Zoom" slicecount="1" values="0.48">
+   </PIN>
+   <PIN pinname="C Y" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <NODE systemname="BubbleNoise (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\BubbleNoise\BubbleNoise (EX9.Texture Source).v4p" nodename="BubbleNoise (EX9.Texture Source)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="1755" top="3645" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Contrast" slicecount="1" values="-0.03">
+   </PIN>
+   <PIN pinname="Freq" slicecount="1" values="3.71">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="-0.29">
+   </PIN>
+   </NODE>
+   <NODE systemname="Elektricity (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Elektricity\Elektricity (EX9.Texture Source).v4p" nodename="Elektricity (EX9.Texture Source)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="3855" top="3660" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="4.05">
+   </PIN>
+   <PIN pinname="Glow Strenght" slicecount="1" values="39.16">
+   </PIN>
+   <PIN pinname="Glow Fall Off" slicecount="1" values="-0.02">
+   </PIN>
+   <PIN pinname="Ambient Glow Height Scale" slicecount="1" values="0.73">
+   </PIN>
+   <PIN pinname="Electricity Height" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="Ambient Glow" slicecount="1" values="0.03">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="1" dstpinname="Texture">
+   </LINK>
+   </PATCH>

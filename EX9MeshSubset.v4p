@@ -1,0 +1,175 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\EX9MeshSubset.v4p" systemname="EX9MeshSubset" filename="D:\work\vvvv\EX9MeshSubset.v4p">
+   <BOUNDS type="Window" left="8535" top="1860" width="14775" height="11070">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE systemname="Mesh (EX9.Geometry Split)" nodename="Mesh (EX9.Geometry Split)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="6045" top="2085" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Indices" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="VertexBuffer (EX9.Geometry Split)" nodename="VertexBuffer (EX9.Geometry Split)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="6000" top="2460" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Normal XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Enable Texture Coordinate 0" slicecount="1" values="|2D TexCoords|">
+   </PIN>
+   <PIN pinname="Texture Coordinate 0 XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Vertex Buffer" dstnodeid="3" dstpinname="Vertex Buffer">
+   </LINK>
+   <NODE systemname="Mesh (EX9.Geometry Join Subsets)" filename="%VVVV%\addonpack\lib\nodes\plugins\MeshJoinSubsets.dll" nodename="Mesh (EX9.Geometry Join Subsets)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="6345" top="3300" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="NormalXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Texture CoordinateXY" visible="1">
+   </PIN>
+   <PIN pinname="IndicesXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Indices Bin Size" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Indices" dstnodeid="1" dstpinname="IndicesXYZ">
+   </LINK>
+   <NODE systemname="Grid (EX9.Geometry)" nodename="Grid (EX9.Geometry)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="6150" top="1380" width="405" height="270">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="301">
+   </PIN>
+   <PIN pinname="Resolution Y">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="4" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Position XYZ" dstnodeid="1" dstpinname="PositionXYZ">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Normal XYZ" dstnodeid="1" dstpinname="NormalXYZ">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Texture Coordinate 0 XY" dstnodeid="1" dstpinname="Texture CoordinateXY">
+   </LINK>
+   <NODE systemname="Count (EX9.Geometry Mesh)" nodename="Count (EX9.Geometry Mesh)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="5535" top="4095" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Mesh" dstnodeid="8" dstpinname="Mesh">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5190" top="5130" width="825" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5190" top="5130" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="FaceCount" dstnodeid="9" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6390" top="4575" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6390" top="4575" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="VertexCount" dstnodeid="10" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3810" top="4845" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3810" top="4845" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="SubsetCount" dstnodeid="11" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="12" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="6915" top="3900" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6915" top="3900" width="0" height="0">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Mesh" dstnodeid="12" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6690" top="810" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6690" top="810" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="110">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Resolution Y">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="14" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7770" top="780" width="2760" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7770" top="780" width="4740" height="510">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;- 110 is OK, but 111 is not working|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="15" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6315" top="5115" width="2895" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6315" top="5115" width="6750" height="390">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;- I guess if the value is more than 2^16(65536), that doesn&apos;t work.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   </PATCH>

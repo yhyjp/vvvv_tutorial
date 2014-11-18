@@ -1,0 +1,89 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\midi_keyboard.v4p" systemname="midi_keyboard" filename="D:\work\midi_keyboard.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="23430" height="15750">
+   </BOUNDS>
+   <NODE systemname="MidiNote (Devices)" nodename="MidiNote (Devices)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="14505" top="4725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Note" visible="1">
+   </PIN>
+   <PIN pinname="On Data" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="15105" top="3330" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15105" top="3330" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="13935" top="3390" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=".. To [" slicecount="1" values="127">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="1" dstpinname="Note">
+   </LINK>
+   <NODE systemname="Synth1VST (VST DShow9)" filename="%VVVV%\lib\nodes\vst\Synth1 VST.dll" nodename="Synth1VST (VST DShow9)" componentmode="InAWindow" id="4">
+   <BOUNDS type="Node" left="13545" top="6045" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Midi Notes Velocity" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Midi Notes Send" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Midi Notes" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Audio Output" visible="1">
+   </PIN>
+   <PIN pinname="Audio Input" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="390" top="780" width="10725" height="8205">
+   </BOUNDS>
+   <PIN pinname="58 lfo2 on/off" visible="-1" pintype="Input" slicecount="1" values="0.75">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="4" dstpinname="Midi Notes">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="4" dstpinname="Midi Notes Velocity">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="On Data" dstnodeid="4" dstpinname="Midi Notes Send">
+   </LINK>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="13590" top="7230" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Volume" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Audio Output" dstnodeid="5" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="WavePlayer (DShow9)" nodename="WavePlayer (DShow9)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="11715" top="2265" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Audio" dstnodeid="4" dstpinname="Audio Input">
+   </LINK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

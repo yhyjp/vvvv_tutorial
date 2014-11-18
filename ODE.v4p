@@ -1,0 +1,11 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\ODE.v4p" systemname="ODE" filename="D:\work\vvvv\ODE.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="22815" height="15750">
+   </BOUNDS>
+   <NODE systemname="World (ODE)" nodename="World (ODE)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="17235" top="7260" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

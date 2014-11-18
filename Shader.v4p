@@ -1,0 +1,255 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\Shader.v4p" systemname="Shader" filename="D:\work\vvvv\Shader.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="23520" height="15750">
+   </BOUNDS>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="7350" top="5715" width="600" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer Template Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Sphere (EX9.Geometry)" nodename="Sphere (EX9.Geometry)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="5880" top="2535" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="40">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="40">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="2550" top="6120" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2550" top="6120" width="9345" height="8865">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8520" top="10905" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D32F_LOCKABLE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Backbuffer Width" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Backbuffer Height" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="13200" top="5220" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Position" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="View" dstnodeid="4" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Projection" dstnodeid="4" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="4215" top="5055" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Teapot (EX9.Geometry)" nodename="Teapot (EX9.Geometry)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="9555" top="2595" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Torus (EX9.Geometry)" nodename="Torus (EX9.Geometry)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="12810" top="2595" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="93">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="98">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="6750" top="2805" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-1.5">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="10110" top="2985" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="13890" top="2955" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="1.5">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TestEffect2 (EX9.Effect)" filename="my_effect\TestEffect2.fx" nodename="TestEffect2 (EX9.Effect)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="12735" top="3990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="tEye XYZ" visible="1">
+   </PIN>
+   <PIN pinname="tColor XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Mesh" dstnodeid="17" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Transform Out" dstnodeid="17" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="1" dstpinname="Layer 4">
+   </LINK>
+   <NODE systemname="TestEffect2 (EX9.Effect)" filename="my_effect\TestEffect2.fx" nodename="TestEffect2 (EX9.Effect)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="9510" top="4020" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="tEye XYZ" visible="1">
+   </PIN>
+   <PIN pinname="tColor XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Transform Out" dstnodeid="18" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Mesh" dstnodeid="18" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Layer" dstnodeid="1" dstpinname="Layer 3">
+   </LINK>
+   <NODE systemname="TestEffect2 (EX9.Effect)" filename="my_effect\TestEffect2.fx" nodename="TestEffect2 (EX9.Effect)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="6600" top="4095" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="tEye XYZ" visible="1">
+   </PIN>
+   <PIN pinname="tColor XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Transform Out" dstnodeid="19" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Mesh" dstnodeid="19" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Layer" dstnodeid="1" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Position" dstnodeid="17" dstpinname="tEye XYZ">
+   <LINKPOINT x="14370" y="5820">
+   </LINKPOINT>
+   <LINKPOINT x="14820" y="5850">
+   </LINKPOINT>
+   <LINKPOINT x="14790" y="3735">
+   </LINKPOINT>
+   <LINKPOINT x="13470" y="3705">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Position" dstnodeid="18" dstpinname="tEye XYZ">
+   <LINKPOINT x="14085" y="6105">
+   </LINKPOINT>
+   <LINKPOINT x="15540" y="6030">
+   </LINKPOINT>
+   <LINKPOINT x="15390" y="3675">
+   </LINKPOINT>
+   <LINKPOINT x="10380" y="3525">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Position" dstnodeid="19" dstpinname="tEye XYZ">
+   <LINKPOINT x="13770" y="6555">
+   </LINKPOINT>
+   <LINKPOINT x="15360" y="6390">
+   </LINKPOINT>
+   <LINKPOINT x="15600" y="3705">
+   </LINKPOINT>
+   <LINKPOINT x="7515" y="3645">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="23">
+   <BOUNDS type="Node" left="12195" top="855" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12195" top="855" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Input" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="24">
+   <BOUNDS type="Node" left="8955" top="570" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8955" top="570" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="0.56,1,0.43">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0, 0|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RGB (Color Join Vector)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.RGBVector.dll" nodename="RGB (Color Join Vector)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="10395" top="1125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=" RGBA" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="26" dstpinname=" RGBA">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="23" dstpinname="Color Input">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="19" dstpinname="tColor XYZ">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="18" dstpinname="tColor XYZ">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="17" dstpinname="tColor XYZ">
+   </LINK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

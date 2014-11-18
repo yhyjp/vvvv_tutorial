@@ -1,0 +1,417 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\VertexBuffer.v4p" systemname="VertexBuffer" filename="D:\work\vvvv\VertexBuffer.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="23445" height="15750">
+   </BOUNDS>
+   <NODE systemname="Grid (EX9.Geometry)" nodename="Grid (EX9.Geometry)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="7290" top="1230" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="27">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="42">
+   </PIN>
+   </NODE>
+   <NODE systemname="GouraudDirectional (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\GouraudDirectional.fx" nodename="GouraudDirectional (EX9.Effect)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="4095" top="6885" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="3615" top="8070" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3615" top="8070" width="6225" height="6105">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9660" top="6465" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Fill (EX9.RenderState)" nodename="Fill (EX9.RenderState)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="2895" top="6570" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Fill Mode" slicecount="1" values="WireFrame">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Render State Out" dstnodeid="1" dstpinname="Render State">
+   </LINK>
+   <NODE systemname="Mesh (EX9.Geometry Split)" nodename="Mesh (EX9.Geometry Split)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="7215" top="1770" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Indices" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="4" dstpinname="Mesh">
+   </LINK>
+   <NODE systemname="VertexBuffer (EX9.Geometry Split)" nodename="VertexBuffer (EX9.Geometry Split)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="6960" top="2250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Normal XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Vertex Buffer" dstnodeid="5" dstpinname="Vertex Buffer">
+   </LINK>
+   <NODE systemname="Vector (3d Split)" nodename="Vector (3d Split)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="4050" top="2430" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Position XYZ" dstnodeid="6" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="Perlin (3d)" nodename="Perlin (3d)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3060" top="3045" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="-3.14">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Octaves" slicecount="1" values="26">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="X" dstnodeid="7" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Y" dstnodeid="7" dstpinname="Y">
+   </LINK>
+   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="3840" top="3735" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="8" dstpinname="Z">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="X" dstnodeid="8" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Y" dstnodeid="8" dstpinname="Y">
+   </LINK>
+   <NODE systemname="VertexBuffer (EX9.Geometry Join)" nodename="VertexBuffer (EX9.Geometry Join)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="6330" top="4140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Normal XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="XYZ" dstnodeid="9" dstpinname="Position XYZ">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Normal XYZ" dstnodeid="9" dstpinname="Normal XYZ">
+   </LINK>
+   <NODE systemname="Mesh (EX9.Geometry Join)" nodename="Mesh (EX9.Geometry Join)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="6195" top="4830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Indices" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Vertex Buffer" dstnodeid="10" dstpinname="Vertex Buffer">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Indices" dstnodeid="10" dstpinname="Indices">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Mesh" dstnodeid="1" dstpinname="Mesh">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="8265" top="6990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="View" dstnodeid="2" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Projection" dstnodeid="2" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="6900" top="5370" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="3" values="2.15,2.15,2.15">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="GouraudDirectional (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\GouraudDirectional.fx" nodename="GouraudDirectional (EX9.Effect)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="14265" top="6690" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Light Direction XYZ" slicecount="3" values="-0.13,-0.13,-0.13">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.08698,0.08698,0.08698,1.00000|">
+   </PIN>
+   <PIN pinname="Diffuse Color" slicecount="1" visible="1" values="|0.80551,0.80551,0.80551,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="24">
+   <BOUNDS type="Node" left="13785" top="7875" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13785" top="7875" width="6225" height="6105">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9660" top="6465" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D16">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Layer" dstnodeid="24" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Fill (EX9.RenderState)" nodename="Fill (EX9.RenderState)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="13065" top="6375" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Fill Mode" slicecount="1" values="WireFrame">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Render State Out" dstnodeid="25" dstpinname="Render State">
+   </LINK>
+   <NODE systemname="Mesh (EX9.Geometry Split)" nodename="Mesh (EX9.Geometry Split)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="17385" top="1575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Indices" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="VertexBuffer (EX9.Geometry Split)" nodename="VertexBuffer (EX9.Geometry Split)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="17130" top="2055" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Normal XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Vertex Buffer" dstnodeid="21" dstpinname="Vertex Buffer">
+   </LINK>
+   <NODE systemname="Vector (3d Split)" nodename="Vector (3d Split)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="14220" top="2235" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Position XYZ" dstnodeid="20" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="Perlin (3d)" nodename="Perlin (3d)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="13230" top="2850" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" visible="1" values="-3.14">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" visible="1" values="145">
+   </PIN>
+   <PIN pinname="Octaves" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Frequency" slicecount="1" values="0.82">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="X" dstnodeid="19" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Y" dstnodeid="19" dstpinname="Y">
+   </LINK>
+   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="14115" top="3990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="X" dstnodeid="18" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Y" dstnodeid="18" dstpinname="Y">
+   </LINK>
+   <NODE systemname="VertexBuffer (EX9.Geometry Join)" nodename="VertexBuffer (EX9.Geometry Join)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="16500" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Normal XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="XYZ" dstnodeid="17" dstpinname="Position XYZ">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Normal XYZ" dstnodeid="17" dstpinname="Normal XYZ">
+   </LINK>
+   <NODE systemname="Mesh (EX9.Geometry Join)" nodename="Mesh (EX9.Geometry Join)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="16365" top="4635" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Vertex Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Indices" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Vertex Buffer" dstnodeid="16" dstpinname="Vertex Buffer">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Indices" dstnodeid="16" dstpinname="Indices">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Mesh" dstnodeid="25" dstpinname="Mesh">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="18435" top="6795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="View" dstnodeid="24" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Projection" dstnodeid="24" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="17070" top="5175" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="3" values="2.15,2.15,2.15">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Transform Out" dstnodeid="25" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Sphere (EX9.Geometry)" nodename="Sphere (EX9.Geometry)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="17340" top="975" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="46">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="46">
+   </PIN>
+   <PIN pinname="Radius" slicecount="1" values="0.84">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Mesh" dstnodeid="22" dstpinname="Mesh">
+   </LINK>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="13620" top="3285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Z" dstnodeid="28" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="28" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Z" dstnodeid="19" dstpinname="Z">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="14775" top="3420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="29" dstpinname="Go To Position">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Position Out" dstnodeid="18" dstpinname="Z">
+   </LINK>
+   <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="12660" top="1485" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Scale" slicecount="1" values="30">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Output" dstnodeid="19" dstpinname="Random Seed">
+   </LINK>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="33">
+   <BOUNDS type="Node" left="16890" top="6135" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="16890" top="6135" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   <PIN pinname="Color Input" slicecount="1" values="|0.54533,0.56626,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="33" srcpinname="Color Output" dstnodeid="25" dstpinname="Diffuse Color">
+   </LINK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   </PATCH>

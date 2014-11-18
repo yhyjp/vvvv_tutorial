@@ -1,0 +1,191 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\GameController.v4p" systemname="GameController" filename="D:\work\vvvv\GameController.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="21525" height="15825">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="6">
+   <BOUNDS type="Node" left="1935" top="7200" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1935" top="7200" width="8970" height="7755">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9150" top="13005" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LookAt (Transform)" nodename="LookAt (Transform)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="9405" top="5550" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Position X" slicecount="1" visible="1" values="0.599999999999999">
+   </PIN>
+   <PIN pinname="Position Y" slicecount="1" visible="1" values="1.9">
+   </PIN>
+   <PIN pinname="Position Z" slicecount="1" visible="1" values="-3">
+   </PIN>
+   <PIN pinname="LookAt X" visible="1" slicecount="1" values="0.599999999999999">
+   </PIN>
+   <PIN pinname="LookAt Z" visible="1" slicecount="1" values="1.9">
+   </PIN>
+   <PIN pinname="LookAt Y" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Perspective (Transform)" nodename="Perspective (Transform)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="9960" top="6330" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="2100" top="5685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Layer" dstnodeid="6" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Transform Out" dstnodeid="6" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="6" dstpinname="View">
+   </LINK>
+   <NODE systemname="GameController (Devices Analog)" nodename="GameController (Devices Analog)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="5670" top="1470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="AX" visible="1">
+   </PIN>
+   <PIN pinname="AY" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="6840" top="4110" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Increment" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Down" visible="1">
+   </PIN>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="-100">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="100">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="Unlimited">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="25">
+   <BOUNDS type="Node" left="7605" top="1440" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7605" top="1440" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="26">
+   <BOUNDS type="Node" left="8985" top="1410" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8985" top="1410" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.6">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LT (Value)" nodename="LT (Value)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="5580" top="2640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="AX" dstnodeid="27" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Output" dstnodeid="24" dstpinname="Down">
+   </LINK>
+   <NODE systemname="GT (Value)" nodename="GT (Value)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="6270" top="2595" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="28" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="AX" dstnodeid="28" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="24" dstpinname="Up">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output" dstnodeid="7" dstpinname="Position X">
+   </LINK>
+   <NODE systemname="LT (Value)" nodename="LT (Value)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="7665" top="2805" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GT (Value)" nodename="GT (Value)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="8355" top="2760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="AY" dstnodeid="30" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="AY" dstnodeid="29" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="29" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="8955" top="4170" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Increment" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Down" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Up" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="-100">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="100">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="Unlimited">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="31" dstpinname="Down">
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Output" dstnodeid="31" dstpinname="Up">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Output" dstnodeid="7" dstpinname="Position Y">
+   </LINK>
+   </PATCH>

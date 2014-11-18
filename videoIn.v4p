@@ -1,0 +1,217 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
+   <PATCH nodename="D:\work\vvvv\videoIn.v4p" systemname="videoIn" filename="D:\work\vvvv\videoIn.v4p">
+   <BOUNDS type="Window" left="15" top="0" width="23400" height="15750">
+   </BOUNDS>
+   <LINK srcnodeid="13" srcpinname="Texture Out" dstnodeid="18" dstpinname="Input">
+   </LINK>
+   <NODE id="13" systemname="VideoIn (EX9.Texture)" filename="%VVVV%\lib\nodes\modules\EX9.Texture\VideoIn (EX9.Texture).v4p" nodename="VideoIn (EX9.Texture)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Texture Out" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" pintype="Input" visible="1" values="480">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" pintype="Input" visible="1" values="640">
+   </PIN>
+   <BOUNDS type="Node" left="7020" top="1620" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="0" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9900" top="5100" width="14370" height="6000">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Property Page" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Framerate" pintype="Input" visible="1" slicecount="1" values="25">
+   </PIN>
+   <PIN pinname="Video Format" pintype="Input" visible="1" slicecount="1" values="RGB24">
+   </PIN>
+   <PIN pinname="Driver" pintype="Input" visible="1" slicecount="1" values="|UCAM-H1C30 series|">
+   </PIN>
+   <PIN pinname="Texture Size Mode" pintype="Input" visible="-1" slicecount="1" values="NonPow2">
+   </PIN>
+   <PIN pinname="Wait for every Nth frame" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Adapter" pintype="Input" visible="-1" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Patch" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Average Framerate" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="18" systemname="ShiftRGB (EX9.Texture Filter)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Filter\ShiftRGB\ShiftRGB (EX9.Texture Filter).v4p" nodename="ShiftRGB (EX9.Texture Filter)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Output" visible="1" pintype="Output">
+   </PIN>
+   <BOUNDS type="Node" left="6900" top="2415" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Hue" slicecount="1" pintype="Input" visible="1" values="0.04">
+   </PIN>
+   <PIN pinname="Direction" slicecount="1" pintype="Input" visible="1" values="-0.34">
+   </PIN>
+   <PIN pinname="Shift" slicecount="1" pintype="Input" visible="1" values="0.61">
+   </PIN>
+   <BOUNDS type="Box" left="0" top="0" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12390" top="4590" width="8310" height="7200">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Control" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" pintype="Input" visible="-1" slicecount="1" values="| Clamp|">
+   </PIN>
+   <PIN pinname="Border Color" pintype="Input" visible="-1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Patch" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Layer" dstnodeid="15" dstpinname="Layers">
+   </LINK>
+   <NODE id="14" systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Layer" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Texture" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Blend Mode" slicecount="1" pintype="Input" visible="1" values="| Off|">
+   </PIN>
+   <BOUNDS type="Node" left="6660" top="3135" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="0" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11805" top="3210" width="17145" height="9105">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color" pintype="Input" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Texture Transform" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color Transform" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Z" pintype="Input" visible="-1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enable Depth" pintype="Input" visible="-1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Patch" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="15" systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" hiddenwhenlocked="0" managers="">
+   <PIN pinname="Layers" visible="1" pintype="Input">
+   </PIN>
+   <BOUNDS type="Node" left="5880" top="4170" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5880" top="4170" width="8205" height="5895">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7740" top="4275" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Device" pintype="Configuration" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Fullscreen Format" pintype="Configuration" slicecount="1" values="X8R8G8B8">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" pintype="Configuration" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" pintype="Configuration" slicecount="1" values="AsDesktop">
+   </PIN>
+   <PIN pinname="Fullscreen Refresh Rate" pintype="Configuration" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" pintype="Configuration" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Backbuffer Count" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Fullscreen Swap Effect" pintype="Configuration" slicecount="1" values="discard">
+   </PIN>
+   <PIN pinname="Windowed Backbuffer Format" pintype="Configuration" slicecount="1" values="X8R8G8B8">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" pintype="Configuration" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" pintype="Configuration" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Windowed Backbuffer Count" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Windowed Swap Effect" pintype="Configuration" slicecount="1" values="discard">
+   </PIN>
+   <PIN pinname="Clip Device" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Presentation Interval" pintype="Configuration" slicecount="1" values="default">
+   </PIN>
+   <PIN pinname="Clear Depth Buffer" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Clear" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Background Color" pintype="Input" visible="1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Backbuffer Width" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Backbuffer Height" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Fullscreen" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="View" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" pintype="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Aspect Ratio" pintype="Input" visible="0" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Crop" pintype="Input" visible="-1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Viewport" pintype="Input" visible="-1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transformations Index" pintype="Input" visible="-1" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="X" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Y" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Left Button" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Middle Button" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Right Button" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Is Fullscreen" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="14" dstpinname="Texture">
+   </LINK>
+   </PATCH>

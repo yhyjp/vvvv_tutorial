@@ -1,0 +1,209 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="D:\work\vvvv\Arduino_pressure.v4p" systemname="Arduino_pressure" filename="D:\work\vvvv\Arduino_pressure.v4p">
+   <BOUNDS type="Window" left="-15585" top="8235" width="13350" height="11430">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
+   <NODE systemname="VideoIn (EX9.Texture)" filename="%VVVV%\lib\nodes\modules\EX9.Texture\VideoIn (EX9.Texture).v4p" nodename="VideoIn (EX9.Texture)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="15255" top="1875" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="14910" top="2415" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Texture Out" dstnodeid="2" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="3">
+   <BOUNDS type="Node" left="14760" top="3165" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="14760" top="3165" width="8475" height="6045">
+   </BOUNDS>
+   <BOUNDS type="Window" left="18735" top="5325" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="3" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="930" top="450" width="2070" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="930" top="450" width="10500" height="990">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Arduino を使う～圧力センサ編～|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="メイリオ">
+   </PIN>
+   </NODE>
+   <NODE systemname="RS232 (Devices)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="RS232 (Devices)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="4875" top="2880" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Connected" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Port Name" slicecount="1" values="COM3">
+   </PIN>
+   <PIN pinname="Baudrate" slicecount="1" values="9600">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="19">
+   <BOUNDS type="Node" left="7365" top="2025" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7365" top="2025" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="20">
+   <BOUNDS type="Node" left="7545" top="3240" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7545" top="3240" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Connected" dstnodeid="20" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="AsValue (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="AsValue (Raw)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="4890" top="3555" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="Byte">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="22" dstpinname="Input">
+   </LINK>
+   <NODE systemname="GetSlice (Spreads)" nodename="GetSlice (Spreads)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="4875" top="4065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Output Bins" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="23" dstpinname="Input">
+   </LINK>
+   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="4860" top="4650" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="24" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Output Bins" dstnodeid="24" dstpinname="Set">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="25">
+   <BOUNDS type="Node" left="4890" top="5175" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4890" top="5175" width="1710" height="690">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="18">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Output" dstnodeid="25" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="26">
+   <BOUNDS type="Node" left="6000" top="9165" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6000" top="9165" width="6825" height="5745">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7905" top="11250" width="6240" height="5055">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="5010" top="8250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Layer" dstnodeid="26" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="28">
+   <BOUNDS type="Node" left="8595" top="7560" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8595" top="7560" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Color Output" dstnodeid="27" dstpinname="Color">
+   </LINK>
+   <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="5220" top="7305" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Transform Out" dstnodeid="27" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="32">
+   <BOUNDS type="Node" left="5130" top="6330" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="255">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="32" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="32" srcpinname="Output" dstnodeid="30" dstpinname="XYZ">
+   </LINK>
+   </PATCH>
