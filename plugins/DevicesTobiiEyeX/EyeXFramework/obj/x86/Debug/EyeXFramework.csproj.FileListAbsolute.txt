@@ -1,0 +1,7 @@
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\bin\x86\Debug\EyeXFramework.dll
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\bin\x86\Debug\EyeXFramework.pdb
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\bin\x86\Debug\Tobii.EyeX.Client.Net20.dll
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\bin\x86\Debug\Tobii.EyeX.Client.Net20.xml
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\obj\x86\Debug\EyeXFramework.csprojResolveAssemblyReference.cache
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\obj\x86\Debug\EyeXFramework.dll
+D:\work\sdk\TobiiEyeXSdk-DotNet-1.3.443\source\EyeXFramework\obj\x86\Debug\EyeXFramework.pdb
