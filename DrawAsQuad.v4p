@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
-   <PATCH nodename="D:\work\vvvv\DrawAsQuad.v4p" scrollx="0" scrolly="0" systemname="DrawAsQuad" filename="D:\work\vvvv\DrawAsQuad.v4p">
-   <BOUNDS type="Window" left="840" top="5700" width="23430" height="15750">
+   <PATCH nodename="D:\work\vvvv_tutorial\DrawAsQuad.v4p" scrollx="0" scrolly="720" systemname="DrawAsQuad" filename="D:\work\vvvv\DrawAsQuad.v4p">
+   <BOUNDS type="Window" left="765" top="450" width="23430" height="15750">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -33,7 +33,7 @@
    <NODE systemname="Mesh (EX9.Geometry Split)" nodename="Mesh (EX9.Geometry Split)" componentmode="Hidden" id="3">
    <BOUNDS type="Node" left="6825" top="2235" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Mesh" visible="1">
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Vertex Buffer" visible="1">
    </PIN>
@@ -205,7 +205,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5745" top="1230" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -215,7 +215,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="36">
@@ -225,7 +225,7 @@
    </PIN>
    <PIN pinname="Input 1" visible="1">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -234,14 +234,14 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="36" dstpinname="Input 1">
    </LINK>
-   <NODE systemname="Sphere (EX9.Geometry)" nodename="Sphere (EX9.Geometry)" componentmode="Hidden" id="38">
+   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="3" dstpinname="Mesh">
+   </LINK>
+   <NODE systemname="Teapot (EX9.Geometry)" nodename="Teapot (EX9.Geometry)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="8190" top="1140" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Mesh" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="38" srcpinname="Mesh" dstnodeid="36" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="3" dstpinname="Mesh">
    </LINK>
    </PATCH>
