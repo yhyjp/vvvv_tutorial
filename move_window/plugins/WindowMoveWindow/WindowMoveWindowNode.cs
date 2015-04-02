@@ -48,13 +48,17 @@ namespace VVVV.Nodes
 		//called when data for any output pin is requested
 		public void Evaluate(int SpreadMax)
 		{
-			IntPtr handle = (IntPtr)FHandle[0];
-			Vector2D p = FLocation[0];
-			Vector2D s = FSize[0];
-			MoveWindow(handle, (int)p.x, (int)p.y, (int)s.x, (int)s.y, 0);
+			int n  = FHandle.SliceCount;
+			FOut.SliceCount = n;
+			for (int i=0; i < n; ++i)
+			{
+				IntPtr handle = (IntPtr)FHandle[i];
+				Vector2D p = FLocation[i%FLocation.SliceCount];
+				Vector2D s = FSize[i%FSize.SliceCount];
+				MoveWindow(handle, (int)p.x, (int)p.y, (int)s.x, (int)s.y, 0);
 			
-			FOut.SliceCount = 1;
-			FOut[0] = p;
+				FOut[i] = p;
+			}
 		}
 	}
 }
