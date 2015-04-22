@@ -1363,7 +1363,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2595" top="15660" width="2400" height="1800">
    </BOUNDS>
-   <BOUNDS type="Window" left="-17580" top="-4515" width="16770" height="11985">
+   <BOUNDS type="Window" left="-16965" top="30" width="16770" height="11985">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
