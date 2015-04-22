@@ -1,0 +1,585 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\Users\Raul\Documents\_VVVV\VVVVLibrary_Raul\Plugins\FlockingBehavior(3D)\_FlockingBehaviour(3D)\_AnimalBehaviors(Help).v4p" filename="C:\Users\Raul\Desktop\FlockingBehavior\AnimalBehaviors(Help).v4p" systemname="AnimalBehaviors (Help)">
+   <BOUNDS height="8445" left="12780" top="4410" type="Window" width="14925">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="68" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="645" top="2940" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="645" top="2940" type="Box" width="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Run">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="77" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="7380" top="5550" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="7380" top="5550" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="50">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="FlockSize">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="81" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="5670" top="5595" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="5670" top="5595" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="8">
+   </PIN>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Enemy_Scale">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="103" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="645" top="6900" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="240" left="645" top="6900" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="IsLeaderCount">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="104" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="300" top="195" type="Node" width="1785">
+   </BOUNDS>
+   <BOUNDS height="720" left="300" top="195" type="Box" width="5430">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="AnimalBehaviors_Help">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="24">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="105" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="315" top="1020" type="Node" width="1290">
+   </BOUNDS>
+   <BOUNDS height="285" left="315" top="1020" type="Box" width="675">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="|by raul|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="165" nodename="Vector (3d Join)" systemname="Vector (3d Join)">
+   <BOUNDS height="270" left="5145" top="2775" type="Node" width="630">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" visible="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="167" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="9090" top="2940" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="240" left="9090" top="2940" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Index">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="SubPatches\Behaviors_Save.v4p" hiddenwhenlocked="1" id="172" nodename="SubPatches\Behaviors_Save.v4p" systemname="Behaviors_Save" stayontop="1">
+   <BOUNDS height="270" left="2865" top="4935" type="Node" width="10740">
+   </BOUNDS>
+   <BOUNDS height="3600" left="2865" top="4935" type="Box" width="4800">
+   </BOUNDS>
+   <BOUNDS height="5850" left="705" top="8955" type="Window" width="22095">
+   </BOUNDS>
+   <PIN pinname="ArriveTarget" visible="1">
+   </PIN>
+   <PIN pinname="SeekTarget" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Mass" visible="1">
+   </PIN>
+   <PIN pinname="Max_Force" visible="1">
+   </PIN>
+   <PIN pinname="Max_Velocity" visible="1">
+   </PIN>
+   <PIN pinname="Radius_Separation" visible="1">
+   </PIN>
+   <PIN pinname="Separation_Weight" visible="1">
+   </PIN>
+   <PIN pinname="Radius_Cohesion" visible="1">
+   </PIN>
+   <PIN pinname="Cohesion_Weight" visible="1">
+   </PIN>
+   <PIN pinname="Radius_Alignment" visible="1">
+   </PIN>
+   <PIN pinname="Alignment_Weight" visible="1">
+   </PIN>
+   <PIN pinname="LeaderAngle" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   <PIN pinname="Scale" visible="1">
+   </PIN>
+   <PIN pinname="Target_Radius" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="172" dstpinname="Index" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="167" srcpinname="Y Output Value">
+   <LINKPOINT x="8615" y="4640">
+   </LINKPOINT>
+   <LINKPOINT x="3400" y="4735">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="InABox" id="173" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="100" left="7590" top="2955" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="1005" left="7590" top="2955" type="Box" width="1215">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN encoded="0" pinname="Input String" slicecount="3" values="|Fish School|,|Insect Flock|,|Bird Flock|">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="175" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="8670" top="2940" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="1035" left="8670" top="2940" type="Box" width="375">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="0,1,2">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" filename="SubPatches\AnimalBehavior_subPatch.v4p" hiddenwhenlocked="0" id="99" nodename="SubPatches\AnimalBehavior_subPatch.v4p" systemname="AnimalBehavior_subPatch">
+   <PIN pinname="Run" visible="1">
+   </PIN>
+   <PIN pinname="InitFlock" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   <PIN pinname="Enemy" visible="1">
+   </PIN>
+   <PIN pinname="ArriveTarget" visible="1">
+   </PIN>
+   <PIN pinname="SeekTarget" visible="1">
+   </PIN>
+   <PIN pinname="Enemy_Scale" visible="1">
+   </PIN>
+   <PIN pinname="Landing_RampDown" slicecount="1" visible="1" values="0.03">
+   </PIN>
+   <PIN pinname="Enabled_FlockingArea" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled_SortGrid" visible="1">
+   </PIN>
+   <PIN pinname="Radius_Separation" visible="1">
+   </PIN>
+   <PIN pinname="Separation_Weight" visible="1">
+   </PIN>
+   <PIN pinname="Radius_Cohesion" visible="1">
+   </PIN>
+   <PIN pinname="Cohesion_Weight" visible="1">
+   </PIN>
+   <PIN pinname="Radius_Alignment" visible="1">
+   </PIN>
+   <PIN pinname="Alignment_Weight" visible="1">
+   </PIN>
+   <PIN pinname="LeaderAngle" visible="1">
+   </PIN>
+   <PIN pinname="Max_Velocity" visible="1">
+   </PIN>
+   <PIN pinname="Mass" visible="1">
+   </PIN>
+   <PIN pinname="Max_Force" visible="1">
+   </PIN>
+   <PIN pinname="FlockSize" visible="1">
+   </PIN>
+   <PIN pinname="Radius_FlockingArea" slicecount="1" visible="1" values="20">
+   </PIN>
+   <PIN pinname="EnemyXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Change Target" visible="1">
+   </PIN>
+   <BOUNDS height="270" left="630" top="6195" type="Node" width="12960">
+   </BOUNDS>
+   <BOUNDS height="12855" left="690" top="225" type="Window" width="19515">
+   </BOUNDS>
+   <PIN pinname="Landing" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Gravity" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="IsLeader" visible="1">
+   </PIN>
+   <PIN pinname="frames per second" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   <PIN pinname="BoxID" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   <PIN pinname="ObjectCount" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="InitXYZ" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Up">
+   </PIN>
+   <PIN pinname="IsLanded" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Period" visible="1">
+   </PIN>
+   <PIN pinname="Scale" visible="1">
+   </PIN>
+   <PIN pinname="Scale XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Target_Radius" visible="1">
+   </PIN>
+   <PIN pinname="IsLeaderCount" visible="1">
+   </PIN>
+   <PIN pinname="Text" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="99" dstpinname="FlockSize" srcnodeid="77" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Enemy_Scale" linkstyle="PolyLine" srcnodeid="81" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Run" srcnodeid="68" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Period" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Time">
+   </LINK>
+   <NODE componentmode="InABox" id="178" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="10605" top="2625" type="Node" width="2205">
+   </BOUNDS>
+   <BOUNDS height="1815" left="10605" top="2625" type="Box" width="3315">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="|B &lt;- Change Behavior&cr;&lf;T &lt;- Change Target POS&cr;&lf;I  &lt;- Init Flock&cr;&lf;R &lt;- ResetFlock&cr;&lf;Mouse &lt;- Move Enemy|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="12">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="180" nodename="Mouse (System Window)" systemname="Mouse (System Window Legacy)">
+   <BOUNDS height="270" left="5160" top="1995" type="Node" width="2805">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="181" nodename="Multiply (Value)" systemname="Multiply (Value)">
+   <BOUNDS height="100" left="5130" top="3165" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="181" dstpinname="Input 1" srcnodeid="165" srcpinname="XYZ">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="EnemyXYZ" srcnodeid="181" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="165" dstpinname="X" srcnodeid="180" srcpinname="X">
+   </LINK>
+   <LINK dstnodeid="165" dstpinname="Z" srcnodeid="180" srcpinname="Y">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="ArriveTarget" hiddenwhenlocked="1" srcnodeid="172" srcpinname="ArriveTarget">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="SeekTarget" hiddenwhenlocked="1" srcnodeid="172" srcpinname="SeekTarget">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Mass" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Mass">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Max_Force" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Max_Force">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Max_Velocity" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Max_Velocity">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Radius_Separation" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Radius_Separation">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Separation_Weight" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Separation_Weight">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Radius_Cohesion" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Radius_Cohesion">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Cohesion_Weight" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Cohesion_Weight">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Alignment_Weight" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Alignment_Weight">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Radius_Alignment" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Radius_Alignment">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="LeaderAngle" hiddenwhenlocked="1" srcnodeid="172" srcpinname="LeaderAngle">
+   </LINK>
+   <LINK dstnodeid="99" dstpinname="Scale XYZ" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Scale">
+   </LINK>
+   <NODE componentmode="Hidden" id="-6" nodename="MainLoop (VVVV)" systemname="MainLoop (VVVV)" hiddenwhenlocked="1">
+   <BOUNDS height="270" left="6375" top="585" type="Node" width="1560">
+   </BOUNDS>
+   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
+   </PIN>
+   <PIN pinname="Maximum forground fps" slicecount="1" visible="1" values="120">
+   </PIN>
+   <PIN pinname="Maximum background fpsS" slicecount="1" visible="1" values="30">
+   </PIN>
+   <PIN pinname="Increase Timing Precision" pintype="Input" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="99" dstpinname="Target_Radius" hiddenwhenlocked="1" srcnodeid="172" srcpinname="Target_Radius">
+   </LINK>
+   <NODE componentmode="InABox" id="185" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="13545" top="6780" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="720" left="13545" top="6780" type="Box" width="795">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value">
+   </PIN>
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Flock_CenterXYZ">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="185" dstpinname="Y Input Value" srcnodeid="99" srcpinname="Flock_CenterXYZ">
+   </LINK>
+   <LINK dstnodeid="103" dstpinname="Y Input Value" linkstyle="PolyLine" srcnodeid="99" srcpinname="IsLeaderCount" hiddenwhenlocked="0">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="186" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="6375" top="135" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6375" top="135" width="450" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="120">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="186" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum forground fps" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="186" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum background fpsS" hiddenwhenlocked="1">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="187" systemname="IOBox (Enumerations)" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="7110" top="105" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7110" top="105" width="870" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="Filtered">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="187" srcpinname="Output Enum" dstnodeid="-6" dstpinname="Time Mode" hiddenwhenlocked="1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="188" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8145" top="135" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8145" top="135" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="188" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Increase Timing Precision" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="189">
+   <BOUNDS type="Node" left="9090" top="2490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="189" srcpinname="Output" dstnodeid="167" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Keyboard (System Global)" filename="%VVVV%\lib\nodes\modules\System\Keyboard (System Global).v4p" nodename="Keyboard (System Global)" componentmode="Hidden" id="191" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1185" top="1125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="KeyMatch (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="KeyMatch (String)" componentmode="Hidden" id="192" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1170" top="1905" width="1740" height="270">
+   </BOUNDS>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   <PIN pinname="Key Match" slicecount="1" encoded="0" values="|b,t,i,r|">
+   </PIN>
+   <PIN pinname="C" visible="1">
+   </PIN>
+   <PIN pinname="N" visible="1">
+   </PIN>
+   <PIN pinname="I" visible="1">
+   </PIN>
+   <PIN pinname="R" visible="1">
+   </PIN>
+   <PIN pinname="T" visible="1">
+   </PIN>
+   <PIN pinname="B" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="191" srcpinname="Keyboard" dstnodeid="192" dstpinname="Keyboard" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="193">
+   <BOUNDS type="Node" left="9105" top="2085" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="193" srcpinname="Up Edge" dstnodeid="189" dstpinname="Up">
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="194">
+   <BOUNDS type="Node" left="4560" top="5625" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (String)" nodename="GetSlice (String)" componentmode="Hidden" id="195" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="7590" top="4155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="173" srcpinname="Output String" dstnodeid="195" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="167" srcpinname="Y Output Value" dstnodeid="195" dstpinname="Index">
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Output" dstnodeid="99" dstpinname="Text" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7590" y="5445">
+   </LINKPOINT>
+   <LINKPOINT x="2370" y="5295">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="198">
+   <BOUNDS type="Node" left="1170" top="5160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="I" dstnodeid="198" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="198" srcpinname="Up Edge" dstnodeid="99" dstpinname="InitFlock">
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="199">
+   <BOUNDS type="Node" left="1755" top="5610" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="192" srcpinname="R" dstnodeid="199" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="199" srcpinname="Up Edge" dstnodeid="99" dstpinname="Reset">
+   </LINK>
+   <LINK srcnodeid="192" srcpinname="T" dstnodeid="194" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="192" srcpinname="B" dstnodeid="193" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="194" srcpinname="Up Edge" dstnodeid="99" dstpinname="Change Target">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="200" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="10590" top="2190" width="1470" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10590" top="2190" width="3315" height="435">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="|Keyboard Controls:|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="12">
+   </PIN>
+   </NODE>
+   </PATCH>
