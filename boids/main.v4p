@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\work\vvvv_tutorial\boids\main.v4p" systemname="main" filename="C:\work\vvvv_tutorial\boids\main.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\work\vvvv_tutorial\boids\main.v4p" systemname="main" filename="C:\work\vvvv_tutorial\boids\main.v4p" scrollx="0" scrolly="7155">
    <BOUNDS type="Window" left="285" top="480" width="19410" height="14175">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
@@ -670,7 +670,7 @@
    </NODE>
    <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="19" dstpinname="Enabled">
    </LINK>
-   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="49" border="1" stayontop="1">
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="Hidden" id="49" border="1" stayontop="1">
    <BOUNDS type="Node" left="1020" top="13035" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1020" top="13035" width="2400" height="1800">
@@ -679,28 +679,22 @@
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
-   <PIN pinname="View" visible="1">
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Projection" visible="1">
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
    </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Height" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="45" srcpinname="Layer" dstnodeid="49" dstpinname="Layers">
-   </LINK>
-   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="50">
-   <BOUNDS type="Node" left="3525" top="12375" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="View" visible="1">
-   </PIN>
-   <PIN pinname="Projection" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="50" srcpinname="View" dstnodeid="49" dstpinname="View">
-   </LINK>
-   <LINK srcnodeid="50" srcpinname="Projection" dstnodeid="49" dstpinname="Projection">
    </LINK>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="2280" top="1140" width="795" height="270">
@@ -1291,5 +1285,107 @@
    <LINK srcnodeid="90" srcpinname="Change" dstnodeid="6" dstpinname="InitFlock">
    </LINK>
    <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="90" dstpinname="Reset">
+   </LINK>
+   <NODE systemname="Perspective (Transform)" nodename="Perspective (Transform)" componentmode="Hidden" id="96">
+   <BOUNDS type="Node" left="3555" top="12675" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Far Plane" slicecount="1" values="300">
+   </PIN>
+   <PIN pinname="FOV" slicecount="1" values="0.2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="96" srcpinname="Transform Out" dstnodeid="49" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="LookAt (Transform Vector)" nodename="LookAt (Transform Vector)" componentmode="Hidden" id="97">
+   <BOUNDS type="Node" left="3000" top="12300" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Position XYZ" visible="1" slicecount="3" values="-0.117797151207924,-0.353386878967285,-14.9949674606323">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="97" srcpinname="Transform Out" dstnodeid="49" dstpinname="View">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="98" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5055" top="11775" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5055" top="11775" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.117797151207924,-0.353386878967285,-14.9949674606323">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="98" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Position XYZ">
+   </LINK>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="99">
+   <BOUNDS type="Node" left="2640" top="13620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="49" srcpinname="EX9 Out" dstnodeid="99" dstpinname="Source">
+   </LINK>
+   <NODE systemname="Glow (EX9.Texture Filter)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Filter\Glow\Glow (EX9.Texture Filter).v4p" nodename="Glow (EX9.Texture Filter)" componentmode="Hidden" id="100">
+   <BOUNDS type="Node" left="2580" top="14340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="GlowAmount" slicecount="1" values="0.91">
+   </PIN>
+   <PIN pinname="GlowShape" slicecount="1" values="0.03">
+   </PIN>
+   <PIN pinname="GlowRadius" slicecount="1" values="0.67">
+   </PIN>
+   <PIN pinname="PostBrightness" slicecount="1" values="1.03">
+   </PIN>
+   <PIN pinname="PreGamma" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="99" srcpinname="Texture Out" dstnodeid="100" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="101">
+   <BOUNDS type="Node" left="2595" top="15660" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2595" top="15660" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="-17580" top="-4515" width="16770" height="11985">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="102">
+   <BOUNDS type="Node" left="2610" top="15030" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="100" srcpinname="Output" dstnodeid="102" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="102" srcpinname="Layer" dstnodeid="101" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="101" srcpinname="Actual Backbuffer Width" dstnodeid="49" dstpinname="Backbuffer Width">
+   </LINK>
+   <LINK srcnodeid="101" srcpinname="Actual Backbuffer Height" dstnodeid="49" dstpinname="Backbuffer Height">
    </LINK>
    </PATCH>
