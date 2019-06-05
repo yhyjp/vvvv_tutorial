@@ -1,0 +1,7 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\Users\yhyhy\work\vvvv_tutorial\vl_async.v4p" systemname="vl_async" filename="C:\Users\yhyhy\work\vvvv_tutorial\vl_async.v4p">
+   <BOUNDS type="Window" left="3330" top="-6830" width="9120" height="6830">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   </PATCH>
